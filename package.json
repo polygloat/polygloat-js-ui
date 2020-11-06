@@ -21,7 +21,7 @@
     "dist/**/*"
   ],
   "peerDependencies": {
-    "@types/react": "16.9.55",
+    "@types/react": "^16.9.55",
     "@polygloat/core": "^1.0.0-alpha.3"
   },
   "dependencies": {},
