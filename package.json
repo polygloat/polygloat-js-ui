@@ -2,15 +2,15 @@
   "name": "@polygloat/ui",
   "version": "1.0.0-alpha.0",
   "description": "Translation mode UI for @polygloat/core package",
-  "main": "core/index.js",
-  "types": "lib/core/index.d.ts",
+  "main": "dist/polygloat.umd.js",
+  "types": "lib/index.d.ts",
   "declaration": true,
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "build": "webpack --env.mode=production && tsc",
+    "build": "webpack --env.mode=production",
     "test": "jest --config ./jest.config.js",
     "develop": "webpack --env.mode=development --watch"
   },
@@ -18,15 +18,15 @@
   "license": "BSD-3-Clause",
   "files": [
     "lib/**/*",
-    "dist/**/*",
-    "core/**/*",
-    "ui/**/*"
+    "dist/**/*"
   ],
   "peerDependencies": {
-    "@types/react": "16.9.55"
+    "@types/react": "16.9.55",
+    "@polygloat/core": "^1.0.0-alpha.3"
   },
   "dependencies": {},
   "devDependencies": {
+    "@polygloat/core": "file:../core",
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-class-properties": "^7.10.4",

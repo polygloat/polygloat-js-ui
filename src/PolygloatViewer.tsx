@@ -1,10 +1,11 @@
 import * as React from 'react';
 import {TranslationDialog} from "./TranslationDialog";
 import {BodyEnd} from "./BodyEnd";
-import {CoreService} from "../core/services/CoreService";
-import {Properties} from "../core/Properties";
-import {EventService} from "../core/services/EventService";
-import {TranslationService} from "../core/services/TranslationService";
+import {CoreService} from '@polygloat/core/lib/services/CoreService';
+import {TranslationService} from '@polygloat/core/lib/services/TranslationService';
+import {Properties} from '@polygloat/core/lib/Properties';
+import {EventService} from '@polygloat/core/lib/services/EventService';
+
 
 export type ComponentDependencies = {
     coreService: CoreService,

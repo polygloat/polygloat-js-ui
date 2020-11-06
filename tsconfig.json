@@ -12,19 +12,12 @@
       "dom"
     ],
     "experimentalDecorators": true,
-    "emitDeclarationOnly": true,
     "emitDecoratorMetadata": true,
     "jsx": "react",
     "downlevelIteration": true,
     "resolveJsonModule": true,
     "baseUrl": "src",
     "paths": {
-      "polygloat/ui": [
-        "./ui"
-      ],
-      "polygloat/core": [
-        "./core"
-      ],
       "@testFixtures/*": [
         "./__testFixtures/*"
       ]

@@ -44,3 +44,5 @@ export class UI {
         });
     }
 }
+
+export default UI;

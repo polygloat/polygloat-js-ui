@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {FunctionComponent, useEffect, useState} from 'react';
-import {RESTRICTED_ASCENDANT_ATTRIBUTE} from "../../../Constants/Global";
+import { RESTRICTED_ASCENDANT_ATTRIBUTE } from "@polygloat/core/lib/Constants/Global";
 
 const CONTEXT_MENU_ID = "_polygloat-context-menu";
 
