@@ -6,7 +6,7 @@ on:
       - 'prerelease-*'
 
 jobs:
-  main:
+  build, test and publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
 
       - run: npm install
 
-      - name: Build core
+      - name: Build
         run: npm run build
 
       - name: Test
@@ -46,11 +46,3 @@ jobs:
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
-
-      - uses: actions/upload-artifact@v2
-        if: always()
-        with:
-          name: cypress
-          path: |
-            cypress/videos/**/*
-            cypress/screenshots/**/*
