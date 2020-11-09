@@ -1,0 +1,38 @@
+name: Build
+
+on:
+  push:
+    brancges:
+      "!prerelease-*"
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Install proper core version
+        run: |
+          source .buildversions
+          npm install @polygloat/core@${CORE_VERSION}
+
+      - name: Npm install
+        run: npm install
+
+      - name: Unit test
+        run: npm run test
+
+      - name: Build core
+        run: npm run build
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: cypress
+          path: |
+            cypress/videos/**/*
+            cypress/screenshots/**/*
