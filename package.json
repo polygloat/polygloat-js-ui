@@ -1,6 +1,6 @@
 {
   "name": "@polygloat/ui",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Translation mode UI for @polygloat/core package",
   "main": "dist/polygloat.umd.js",
   "types": "lib/index.d.ts",
