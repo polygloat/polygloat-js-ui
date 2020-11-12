@@ -5,6 +5,7 @@ import {LanguageSelect} from "./LanguageSelect";
 import {TranslationFields} from "./TranslationFields";
 import {Dialog} from './common/Dialog';
 import {Button} from './common/Button';
+import {TextHelper} from '@polygloat/core/lib/helpers/TextHelper'
 
 export default () => {
     let context = useContext(TranslationDialogContext);
@@ -13,14 +14,15 @@ export default () => {
         <div>
             <Dialog open={context.open} onClose={context.onClose} aria-labelledby="form-dialog-title" style={{width: "700px"}}>
 
-                <h2 style={{marginTop: 0}}>{context.input}</h2>
+                <h3>Translate text</h3>
+                <p style={{marginTop: 0, marginBottom: "20px"}}>{context.input && TextHelper.removeEscapes(context.input)}</p>
                 <LanguageSelect/>
 
-                <div style={{marginTop: "5px"}}>
+                <div style={{marginTop: "20px"}}>
                     <TranslationFields/>
                 </div>
                 {
-                    context.editDisabled &&
+                    context.editDisabled && !context.loading &&
                     <>"Modification is restricted due to missing translations.edit scope in current api key settings."</>
                 }
 
