@@ -14,7 +14,7 @@ export default () => {
         <div>
             <Dialog open={context.open} onClose={context.onClose} aria-labelledby="form-dialog-title" style={{width: "700px"}}>
 
-                <h3>Translate text</h3>
+                <h3 style={{marginTop: 0}}>Translate text</h3>
                 <p style={{marginTop: 0, marginBottom: "20px"}}>{context.input && TextHelper.removeEscapes(context.input)}</p>
                 <LanguageSelect/>
 

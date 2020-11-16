@@ -54,6 +54,12 @@ export const TranslationDialog: FunctionComponent<DialogProps> = (props) => {
     }
 
     useEffect(() => {
+        const onKeyDown = (e) => {
+            if(e.key === "Escape") {
+                props.onClose();
+            }
+        }
+
         if (props.open) {
             setLoading(true);
             setSuccess(false);
@@ -64,6 +70,12 @@ export const TranslationDialog: FunctionComponent<DialogProps> = (props) => {
                     setAvailableLanguages(l);
                 });
             }
+            window.addEventListener("keydown", onKeyDown)
+        }
+
+        return () => {
+            window.removeEventListener("keydown", onKeyDown)
+
         }
     }, [props.open]);
 
