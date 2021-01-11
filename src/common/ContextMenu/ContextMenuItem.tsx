@@ -4,7 +4,7 @@ import {useWithStyles} from "../useWithStyles";
 
 const CLASS_NAME = "_polygloat-menu-item";
 
-export const ContextMenuItem: FunctionComponent< React.ComponentProps<"div">> = (props) => {
+export const ContextMenuItem: FunctionComponent<React.ComponentProps<"div">> = (props) => {
     const hoverBackgroundColor = "rgba(0,93,255, 0.05)";
 
     useWithStyles(`
@@ -18,8 +18,6 @@ export const ContextMenuItem: FunctionComponent< React.ComponentProps<"div">> = 
     `)
 
     return (
-        <div className={CLASS_NAME} {...props}>
-            {props.children}
-        </div>
+        <div className={CLASS_NAME} {...props} />
     )
 };
